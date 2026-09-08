@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wallet Integration</title>
+  <link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+  <main>
+    <p class="pill">STP-KAS · project delusional</p>
+    <h1>Wallet integration</h1>
+    <p class="sub">Kasware and Kastle inject. Every other Kaspa wallet is listed, not faked. Split by desktop and phone.</p>
+    <p>This site never asks for a seed.</p>
+
+    <h2>Desktop</h2>
+    <div class="grid">
+      <a class="card" href="/desktop/windows/demo/"><strong>Windows</strong><p class="muted">Chrome / Edge / Brave. Kasware + Kastle extensions.</p></a>
+      <a class="card" href="/desktop/linux/demo/"><strong>Linux</strong><p class="muted">Chrome / Chromium / Brave. Same inject.</p></a>
+      <a class="card" href="/desktop/ubuntu/demo/"><strong>Ubuntu</strong><p class="muted">apt / snap Chrome path. Same inject.</p></a>
+      <a class="card" href="/desktop/appleos/demo/"><strong>Apple OS</strong><p class="muted">macOS. Chrome / Brave / Edge — not Safari.</p></a>
+    </div>
+
+    <h2>Phone</h2>
+    <div class="grid">
+      <a class="card" href="/phone/ios/demo/"><strong>iOS</strong><p class="muted">No Kasware. Kastle in-app browser, Kaspium, kaspa: URI.</p></a>
+      <a class="card" href="/phone/android/demo/"><strong>Android</strong><p class="muted">Kasware APK, Kastle, Kaspium, kaspa: URI.</p></a>
+    </div>
+
+    <p class="muted">Serve from the repo root: <code>python -m http.server 8765</code> then open <code>http://127.0.0.1:8765/</code></p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+:root {
+  --bg: #0d1210;
+  --card: #161d1a;
+  --line: #2a3833;
+  --text: #e8f0ec;
+  --muted: #8aa097;
+  --kas: #49eacb;
+  --kas-dim: #1a4a42;
+  --warn: #e8c36a;
+  --bad: #e07a7a;
+  --ok: #6ee7b7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+}
+main, .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 80px; }
+h1 { font-size: 1.6rem; margin: 0 0 8px; }
+h2 { font-size: 1.15rem; margin: 28px 0 10px; }
+.sub, .muted { color: var(--muted); }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+button, .btn {
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 650;
+  cursor: pointer;
+  background: var(--kas);
+  color: #06241e;
+  text-decoration: none;
+  display: inline-block;
+  font: inherit;
+}
+button.ghost, .btn.ghost { background: #24332e; color: var(--text); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+code, .mono { font-family: ui-monospace, Consolas, monospace; word-break: break-all; }
+.ok { color: var(--ok); }
+.bad { color: var(--bad); }
+.warn { color: var(--warn); }
+a { color: var(--kas); }
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: var(--kas-dim);
+  color: var(--kas);
+  margin-right: 6px;
+}
+.status { min-height: 1.4em; color: var(--muted); font-size: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+nav.platforms a { margin-right: 10px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+@media (max-width: 640px) {
+  h1 { font-size: 1.3rem; }
+  main, .wrap { padding: 20px 14px 64px; }
+}
