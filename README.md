@@ -1,93 +1,22 @@
-# Wallet integration
+# Withdrawn
 
-Public Kaspa **wallet integration** kit from [STP-KAS](https://github.com/STP-KAS) / [@StppStp](https://x.com/StppStp).
+**This desk does not ship wallet integrations.**
 
-In-page connect is **Kasware** and **Kastle** only. Every other wallet is catalogued and opened in its own app. This site never asks for a seed.
+Kasware, Kastle, and any other in-page inject were removed on **17 Sep 2026**. A clone of this repository must not be used as a wallet kit. The previous scripts now throw on load.
 
-Extracted from the working connect code in [kns](https://github.com/STP-KAS/kns), [gramlane](https://github.com/STP-KAS/gramlane), and [kaspaexplained-delusional-stp](https://github.com/STP-KAS/kaspaexplained-delusional-stp).
+Pay path this desk will name: QR code, `kaspa:` URI, or paste a txid. Build that on your own stack.
 
-## Platforms (separate folders)
+Not Kaspa core. Not a product.
 
-| Folder | What |
-| --- | --- |
-| [`desktop/windows`](desktop/windows) | Windows · Chrome / Edge / Brave extensions |
-| [`desktop/linux`](desktop/linux) | Linux (generic) · Chromium family |
-| [`desktop/ubuntu`](desktop/ubuntu) | Ubuntu · apt/deb Chrome notes |
-| [`desktop/appleos`](desktop/appleos) | Apple OS (macOS) · not Safari |
-| [`phone/ios`](phone/ios) | iOS · no Kasware · Kastle in-app / `kaspa:` URI |
-| [`phone/android`](phone/android) | Android · Kasware APK + Kastle + URI |
+## Why
 
-Shared inject lives in [`inject/`](inject/). The wallet list lives in [`catalog/wallets.json`](catalog/wallets.json).
+[KASPAglobal, 17 Sep 2026](https://x.com/kaspaglobal/status/2100536064683176270):
 
-```
-wallet-integration
-├── inject/          Kasware + Kastle window.* helpers, pay, holdings
-├── catalog/         all wallets, tagged by OS
-├── desktop/
-│   ├── windows/
-│   ├── linux/
-│   ├── ubuntu/
-│   └── appleos/
-└── phone/
-    ├── ios/
-    └── android/
-```
+> Someone posts a Kaspa GitHub link and says “it shipped.” Open the link.
+> Does it show a proposal, a development branch, a release, or an activation announcement?
+> Then check the software you use. If the feature needs wallet support, a node release alone won't put it in your wallet.
 
-## Honest inject
+This repo was the inverse error: shipping inject as if wallet support were a product of this desk. It was not. Native DeFi is still roadmap. There is no L1 stable. App-layer sequencing is not a settled product. So this kit is withdrawn.
 
-```js
-// Kasware — docs.kasware.xyz
-await window.kasware.requestAccounts();
-
-// Kastle — docs.kastle.cc
-await window.kastle.connect();
-await window.kastle.getAccount();
-```
-
-Drop-in:
-
-```html
-<script src="/inject/kaspa-wallets.js"></script>
-<script src="/inject/pay.js"></script>
-<script>
-  document.querySelector("#kasware").onclick = () => KaspaWallets.connect("kasware");
-</script>
-```
-
-If there is no inject (Safari, iPhone, Firefox), pay with a `kaspa:` URI. Any Kaspa wallet can open it.
-
-## Run the demos
-
-Serve **from the repo root** (paths are absolute from `/`).
-
-Windows:
-
-```powershell
-cd C:\Users\Remco\wallet-integration
-.\desktop\windows\start.ps1
-```
-
-Linux / Ubuntu / Apple OS:
-
-```bash
-./desktop/linux/start.sh
-# or ./desktop/ubuntu/start.sh
-# or ./desktop/appleos/start.sh
-```
-
-Then http://127.0.0.1:8765/
-
-## Tests
-
-```bash
-node --test tests/*.test.mjs
-go test ./catalog
-```
-
-## Other wallets
-
-Hardware, native, and multi-chain wallets (Tangem, Ledger/KasVault, Kaspium, Kaspa NG, KDX, KasKeeper, Kurncy, Zelcore, …) are in the catalog with `connect: "open"` or `"install"`. The kit does not invent `window.*` keys for them.
-
-## License
-
-MIT. Not a wallet. Not custody. Not Kaspa core.
+Front door: [STP-KAS/kaspa-dapps](https://github.com/STP-KAS/kaspa-dapps)
+Statement: [NOT-A-PRODUCT.md](https://github.com/STP-KAS/kaspa-dapps/blob/main/NOT-A-PRODUCT.md)
